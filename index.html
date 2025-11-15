@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SchoolChat - Login</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Chat</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="login-bg">
+<body>
+    <div class="container">
+        <h1>Chat da Escola</h1>
 
-<div class="login-container">
+        <div class="login-box">
+            <input type="text" id="username" placeholder="Seu nome...">
 
-    <h1>SchoolChat</h1>
+            <button id="enter-btn">ENTRAR</button>
+            <button id="generate-btn">GERAR CÓDIGO</button>
 
-    <!-- Botão de gerar código -->
-    <button onclick="gerarCodigo()" class="gen-btn">Gerar Código</button>
-    <p id="codigo" style="margin-bottom: 20px;"></p>
+            <p id="generated-code" class="code-box"></p>
+        </div>
+    </div>
 
-    <p>Digite seu código de acesso:</p>
-    <input id="codeInput" type="text" placeholder="Ex: SC-8F21KD">
-    <button onclick="enterChat()">Entrar</button>
+    <script>
+        // ENTRAR
+        document.getElementById('enter-btn').addEventListener('click', function () {
+            const name = document.getElementById('username').value.trim();
 
-</div>
+            if (name === "") {
+                alert("Digite seu nome para entrar.");
+                return;
+            }
 
-<!-- MOVER O SCRIPT PARA O FIM -->
-<script src="app.js"></script>
+            localStorage.setItem("chatUser", name);
+            window.location.href = "chat.html";
+        });
 
-<script>
-function gerarCodigo() {
-    const codigo = Math.random().toString(36).substr(2, 8).toUpperCase();
-    document.getElementById("codigo").textContent = "Seu código: SC-" + codigo;
-}
-</script>
-
+        // GERAR CÓDIGO
+        document.getElementById('generate-btn').addEventListener('click', function () {
+            const code = Math.floor(100000 + Math.random() * 900000); 
+            document.getElementById('generated-code').innerText = "Código gerado: " + code;
+        });
+    </script>
 </body>
 </html>
-
