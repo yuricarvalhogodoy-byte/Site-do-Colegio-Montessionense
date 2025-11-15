@@ -1,0 +1,82 @@
+body {
+}
+
+
+#groupList div {
+background: #3b3d42;
+padding: 10px;
+border-radius: 5px;
+margin-bottom: 8px;
+cursor: pointer;
+}
+
+
+#groupList div:hover {
+background: #505258;
+}
+
+
+/* CHAT AREA (WhatsApp) */
+.chat-area {
+flex: 1;
+display: flex;
+flex-direction: column;
+background: #111;
+}
+
+
+.chat-header {
+padding: 15px;
+border-bottom: 1px solid #333;
+background: #202225;
+}
+
+
+.messages {
+flex: 1;
+overflow-y: auto;
+padding: 20px;
+}
+
+
+.message {
+margin-bottom: 15px;
+padding: 10px 15px;
+display: inline-block;
+max-width: 60%;
+border-radius: 10px;
+background: #5865f2;
+}
+
+
+.message.you {
+background: #3ba55d;
+margin-left: auto;
+}
+
+
+.input-area {
+padding: 10px;
+display: flex;
+gap: 10px;
+border-top: 1px solid #333;
+background: #202225;
+}
+
+
+.input-area input {
+flex: 1;
+padding: 12px;
+border-radius: 5px;
+border: none;
+}
+
+
+.input-area button {
+background: #5865f2;
+border: none;
+padding: 12px 20px;
+border-radius: 5px;
+color: white;
+cursor: pointer;
+}

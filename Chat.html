@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SchoolChat</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+
+<!-- Sidebar estilo Discord -->
+<aside class="sidebar">
+<h2>SchoolChat</h2>
+
+
+<div class="group-section">
+<h3>Grupos</h3>
+<div id="groupList"></div>
+<button class="create-btn" onclick="createGroup()">+ Criar Grupo</button>
+</div>
+</aside>
+
+
+<!-- Chat estilo WhatsApp -->
+<main class="chat-area">
+<header class="chat-header">
+<h2 id="chatTitle">Chat Principal</h2>
+</header>
+
+
+<div id="messages" class="messages"></div>
+
+
+<footer class="input-area">
+<input id="messageInput" type="text" placeholder="Digite uma mensagem...">
+<button onclick="sendMessage()">Enviar</button>
+</footer>
+</main>
+</div>
+
+
+<script src="firebase.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
