@@ -1,47 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SchoolChat</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchoolChat</title>
+    <link rel="stylesheet" href="Style.css">
 </head>
+
 <body>
+
 <div class="container">
+    <!-- Sidebar (Grupos) -->
+    <div class="sidebar">
+        <h2>Grupos</h2>
 
+        <button onclick="createGroup()" class="create-btn">Criar Grupo</button>
 
-<!-- Sidebar estilo Discord -->
-<aside class="sidebar">
-<h2>SchoolChat</h2>
+        <div id="groupList"></div>
+    </div>
 
+    <!-- Área do Chat -->
+    <div class="chat-area">
+        <div class="chat-header">
+            <h2 id="chatTitle">Chat Principal</h2>
+        </div>
 
-<div class="group-section">
-<h3>Grupos</h3>
-<div id="groupList"></div>
-<button class="create-btn" onclick="createGroup()">+ Criar Grupo</button>
-</div>
-</aside>
+        <div id="messages" class="messages"></div>
 
-
-<!-- Chat estilo WhatsApp -->
-<main class="chat-area">
-<header class="chat-header">
-<h2 id="chatTitle">Chat Principal</h2>
-</header>
-
-
-<div id="messages" class="messages"></div>
-
-
-<footer class="input-area">
-<input id="messageInput" type="text" placeholder="Digite uma mensagem...">
-<button onclick="sendMessage()">Enviar</button>
-</footer>
-</main>
+        <div class="input-area">
+            <input id="messageInput" type="text" placeholder="Digite sua mensagem...">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
 </div>
 
+<!-- ============================ -->
+<!-- ORDEM CORRETA DOS SCRIPTS   -->
+<!-- ============================ -->
 
-<script src="firebase.js"></script>
+<!-- Firebase Core -->
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+
+<!-- Firestore -->
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+
+<!-- Seu arquivo de config do Firebase -->
+<script src="Firebase.js"></script>
+
+<!-- Seu app.js (funções do chat) -->
 <script src="app.js"></script>
+
 </body>
 </html>
